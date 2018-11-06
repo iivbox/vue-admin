@@ -1,55 +1,41 @@
 <template>
-  <Layout class="template-layout">
-        <Header><Button type="primary" @click="resetUserInfo">Click</Button></Header>
-        <Content class="content">
-          <div>
-            <H1>{{msg}}</H1>
-          </div>
-          <br/>
-          <MyCard />
-        </Content>
-        <Footer class="footer">Footer</Footer>
-  </Layout>
+  <div>
+    <BasicTable/>
+    <OperateTable/>
+    <DataDisplay/>
+    <SimpleFooter/>
+    <BasicSteps/>
+    <SimpleLogin/>
+    <BasicNotFound/>
+    <StackedLineChart/>
+    <Doughnut/>
+    <SimpleForm/>
+  </div>
 </template>
 
 <script>
-import {Layout,Header,Content,Footer,Button} from 'iview';
-import MyCard from './components/MyCard';
+  import BasicTable from './components/BasicTable'
+  import OperateTable from './components/OperateTable'
+  import DataDisplay from './components/DataDisplay'
+  import SimpleFooter from './components/SimpleFooter'
+  import BasicSteps from './components/BasicSteps'
+  import SimpleLogin from './components/SimpleLogin'
+  import BasicNotFound from './components/BasicNotFound'
+  import StackedLineChart from './components/StackedLineChart'
+  import Doughnut from './components/Doughnut'
+  import SimpleForm from './components/SimpleForm'
+  
+  export default {
+    data() {
+      return {
 
-export default {
-  name: 'home',
-  components: {
-    Layout,Header,Content,Footer,Button,MyCard
-  },
-  data() {
-    return {
-      
-    };
-  },
-  computed: {
-    msg(){
-      return `Welcome to ${this.$store.state.Home.userInfo.name}`
-    }
-  },
-  methods:{
-    resetUserInfo(){
-      this.$store.dispatch("Home/setUserInfo", {name:'Vuex'});
-    }
+      }
+    },
+    components: { BasicTable, OperateTable, DataDisplay, SimpleFooter, BasicSteps, SimpleLogin, BasicNotFound, StackedLineChart, Doughnut, SimpleForm }
   }
-};
 </script>
 
-<style lang="less" scoped>
-.template-layout{
-  height: 100%;
-  .content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .footer{
-    background: #515a6e;
-  }
-}
+<style>
+
 </style>
+
